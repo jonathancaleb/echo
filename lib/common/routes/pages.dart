@@ -1,4 +1,9 @@
+import 'package:echo/common/middlewares/middlewares.dart';
+import 'package:echo/pages/frame/message/index.dart';
+import 'package:echo/pages/frame/signin/index.dart';
+import 'package:echo/pages/frame/welcome/index.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import 'routes.dart';
 
@@ -6,16 +11,16 @@ class AppPages {
   static const initial = AppRoutes.initial;
   static final RouteObserver<Route> observer = RouteObservers();
   static List<String> history = [];
-  /*
+
   static final List<GetPage> routes = [
-    // 免登陆
+    //boot up app
     GetPage(
-      name: AppRoutes.INITIAL,
-      page: () => WelcomePage(),
+      name: AppRoutes.initial,
+      page: () => const WelcomePage(),
       binding: WelcomeBinding(),
     ),
     GetPage(
-      name: AppRoutes.SIGN_IN,
+      name: AppRoutes.sigin,
       page: () => SignInPage(),
       binding: SignInBinding(),
     ),
@@ -30,25 +35,30 @@ class AppPages {
     //   ],
     // ),
 
-    // 最新路由
-    GetPage(name: AppRoutes.EmailLogin, page: () => EmailLoginPage(), binding: EmailLoginBinding()),
-    GetPage(name: AppRoutes.Register, page: () => RegisterPage(), binding: RegisterBinding()),
-    GetPage(name: AppRoutes.Forgot, page: () => ForgotPage(), binding: ForgotBinding()),
-    GetPage(name: AppRoutes.Phone, page: () => PhonePage(), binding: PhoneBinding()),
-    GetPage(name: AppRoutes.SendCode, page: () => SendCodePage(), binding: SendCodeBinding()),
-    // 首页
-    GetPage(name: AppRoutes.Contact, page: () => ContactPage(), binding: ContactBinding()),
-    //消息
-    GetPage(name: AppRoutes.Message, page: () => MessagePage(), binding: MessageBinding(),middlewares: [
-       RouteAuthMiddleware(priority: 1),
-     ],),
-    //我的
-    GetPage(name: AppRoutes.Profile, page: () => ProfilePage(), binding: ProfileBinding()),
-    //聊天详情
-    GetPage(name: AppRoutes.Chat, page: () => ChatPage(), binding: ChatBinding()),
+    // // 最新路由
+    // GetPage(name: AppRoutes.EmailLogin, page: () => EmailLoginPage(), binding: EmailLoginBinding()),
+    // GetPage(name: AppRoutes.Register, page: () => RegisterPage(), binding: RegisterBinding()),
+    // GetPage(name: AppRoutes.Forgot, page: () => ForgotPage(), binding: ForgotBinding()),
+    // GetPage(name: AppRoutes.Phone, page: () => PhonePage(), binding: PhoneBinding()),
+    // GetPage(name: AppRoutes.SendCode, page: () => SendCodePage(), binding: SendCodeBinding()),
+    // // 首页
+    // GetPage(name: AppRoutes.Contact, page: () => ContactPage(), binding: ContactBinding()),
+    // //消息
+    GetPage(
+      name: AppRoutes.message,
+      page: () => MessagePage(),
+      binding: MessageBinding(),
+      middlewares: [
+        RouteAuthMiddleware(priority: 1),
+      ],
+    ),
+    // //我的
+    // GetPage(name: AppRoutes.Profile, page: () => ProfilePage(), binding: ProfileBinding()),
+    // //聊天详情
+    // GetPage(name: AppRoutes.Chat, page: () => ChatPage(), binding: ChatBinding()),
 
-    GetPage(name: AppRoutes.Photoimgview, page: () => PhotoImgViewPage(), binding: PhotoImgViewBinding()),
-    GetPage(name: AppRoutes.VoiceCall, page: () => VoiceCallViewPage(), binding: VoiceCallViewBinding()),
-    GetPage(name: AppRoutes.VideoCall, page: () => VideoCallPage(), binding: VideoCallBinding()),
-  ];*/
+    // GetPage(name: AppRoutes.Photoimgview, page: () => PhotoImgViewPage(), binding: PhotoImgViewBinding()),
+    // GetPage(name: AppRoutes.VoiceCall, page: () => VoiceCallViewPage(), binding: VoiceCallViewBinding()),
+    // GetPage(name: AppRoutes.VideoCall, page: () => VideoCallPage(), binding: VideoCallBinding()),
+  ];
 }
