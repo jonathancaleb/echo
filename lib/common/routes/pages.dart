@@ -1,5 +1,6 @@
 import 'package:echo/common/middlewares/middlewares.dart';
 import 'package:echo/pages/frame/message/index.dart';
+import 'package:echo/pages/frame/profile/index.dart';
 import 'package:echo/pages/frame/signin/index.dart';
 import 'package:echo/pages/frame/welcome/index.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +22,7 @@ class AppPages {
     ),
     GetPage(
       name: AppRoutes.sigin,
-      page: () => SignInPage(),
+      page: () => const SignInPage(),
       binding: SignInBinding(),
     ),
 
@@ -43,17 +44,20 @@ class AppPages {
     // GetPage(name: AppRoutes.SendCode, page: () => SendCodePage(), binding: SendCodeBinding()),
     // // 首页
     // GetPage(name: AppRoutes.Contact, page: () => ContactPage(), binding: ContactBinding()),
-    // //消息
+    // message
     GetPage(
       name: AppRoutes.message,
-      page: () => MessagePage(),
+      page: () => const MessagePage(),
       binding: MessageBinding(),
       middlewares: [
         RouteAuthMiddleware(priority: 1),
       ],
     ),
-    // //我的
-    // GetPage(name: AppRoutes.Profile, page: () => ProfilePage(), binding: ProfileBinding()),
+    // profile
+    GetPage(
+        name: AppRoutes.profile,
+        page: () => const ProfilePage(),
+        binding: ProfileBinding()),
     // //聊天详情
     // GetPage(name: AppRoutes.Chat, page: () => ChatPage(), binding: ChatBinding()),
 
