@@ -1,8 +1,10 @@
 import 'package:echo/common/values/values.dart';
+import 'package:echo/pages/frame/signin/controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
-class SignInPage extends StatelessWidget {
+class SignInPage extends GetView<SignInController> {
   const SignInPage({super.key});
 
   //logo
@@ -24,7 +26,8 @@ class SignInPage extends StatelessWidget {
   Widget buildThirdPartyLogin(String loginType, String logo) {
     return GestureDetector(
       onTap: () {
-        print("third party ${loginType}");
+        //print("third party ${loginType}");
+        controller.handleSigin("google");
       },
       child: Container(
         padding: EdgeInsets.all(10.h),
